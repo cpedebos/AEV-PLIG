@@ -135,8 +135,7 @@ def GetMolAEVs_extended(protein_path, mol, atom_keys, radial_coefs, atom_map):
 
     converter = torchani.SpeciesConverter(atom_symbols)
     species = converter(atomicnums).unsqueeze(0)          # (1, N)
-   # coords = torch.tensor(coords.values,
-   #                                    dtype=torch.float32).unsqueeze(0)  # (1, N, 3)
+
     index_diff = torch.tensor([mol_len], dtype=torch.long)
 
     aev = AEVC.forward((species, coords), index_diff)
@@ -145,7 +144,6 @@ def GetMolAEVs_extended(protein_path, mol, atom_keys, radial_coefs, atom_map):
     n_rad_sub = len(EtaR) * len(RsR)
     indices = list(np.arange(n * n_rad_sub))
 
-    #return Ligand, aev.aevs[:mol_len, indices]
     return Ligand, aev.aevs[0, :mol_len, indices]
 
 def one_of_k_encoding(x, allowable_set):
