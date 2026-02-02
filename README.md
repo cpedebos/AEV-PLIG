@@ -1,3 +1,5 @@
+This is a fork from the original AEV-PLIG repository where the process_and_predict.py script is adapted to run with TorchANI 2. The rest is exactly the same.
+
 # AEV-PLIG
 
 AEV-PLIG is a GNN-based scoring function that predicts the binding affinity of a bound protein-ligand complex given its 3D structure. The paper is published in Nature's *Communications Chemistry* at [Narrowing the gap between machine learning scoring functions and free energy perturbation using augmented data](https://doi.org/10.1038/s42004-025-01428-y).
